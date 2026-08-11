@@ -37,7 +37,7 @@ changeColorButton.addEventListener('click', () => {
 
 changeColorButton.addEventListener('dblclick', () => {
   clearTimeout(colorChangeTimer);
-  
+
   cards.forEach((card, index) => {
     card.style.backgroundColor = initialColor[index];
   });
@@ -65,3 +65,5 @@ function outputConsoleLog(message) {
   alert(message)
   console.log(message)
 }
+
+
