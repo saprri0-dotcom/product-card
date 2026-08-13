@@ -1,9 +1,13 @@
-const cards = document.querySelectorAll('.card');
-const changeColorButton = document.querySelector('#change-color-all-cards-button');
-const blueColorHash = '#0000FF';
+const cards = document.querySelectorAll(".card");
+const changeColorButton = document.querySelector(
+  "#change-color-all-cards-button",
+);
+
+const blueColorHash = "#0000FF";
 const initialColor = Array.from(cards, (card) => {
   return getComputedStyle(card).backgroundColor;
 });
+
 let colorChangeTimer;
 
 function getRandomColor() {
@@ -14,18 +18,21 @@ function getRandomColor() {
   return `rgb(${red}, ${green}, ${blue})`;
 }
 
-const firstCard = document.querySelector('.card');
-const changeColorCardButton = document.querySelector('#change-color-card-button');
+const firstCard = document.querySelector(".card");
+const changeColorCardButton = document.querySelector(
+  "#change-color-card-button",
+);
+
 let isFirstCardBlue = false;
 const FirstCardInitialColor = getComputedStyle(firstCard).backgroundColor;
-changeColorCardButton.addEventListener('click', () => {
-  firstCard.style.backgroundColor = isFirstCardBlue 
-? FirstCardInitialColor 
-: blueColorHash;
+changeColorCardButton.addEventListener("click", () => {
+  firstCard.style.backgroundColor = isFirstCardBlue
+    ? FirstCardInitialColor
+    : blueColorHash;
   isFirstCardBlue = !isFirstCardBlue;
 });
 
-changeColorButton.addEventListener('click', () => {
+changeColorButton.addEventListener("click", () => {
   clearTimeout(colorChangeTimer);
 
   colorChangeTimer = setTimeout(() => {
@@ -35,7 +42,7 @@ changeColorButton.addEventListener('click', () => {
   }, 250);
 });
 
-changeColorButton.addEventListener('dblclick', () => {
+changeColorButton.addEventListener("dblclick", () => {
   clearTimeout(colorChangeTimer);
 
   cards.forEach((card, index) => {
@@ -43,29 +50,29 @@ changeColorButton.addEventListener('dblclick', () => {
   });
 });
 
-const openGoogleButton = document.querySelector('#open-google');
+const openGoogleButton = document.querySelector("#open-google");
 
-openGoogleButton.addEventListener('click', openGoogle)
+openGoogleButton.addEventListener("click", openGoogle);
 
 function openGoogle() {
-  const answer = confirm('Вы действительно хотите открыть страницу Google.com?');
+  const answer = confirm(
+    "Вы действительно хотите открыть страницу Google.com?",
+  );
 
   if (answer === true) {
-    window.open('https://www.google.com');
+    window.open("https://www.google.com");
   } else {
     return;
   }
 }
 
-const outputConsoleLogButton = document.querySelector('#output-console-log');
+const outputConsoleLogButton = document.querySelector("#output-console-log");
 
-outputConsoleLogButton.addEventListener('click', () => outputConsoleLog('ДЗ №4'))
+outputConsoleLogButton.addEventListener("click", () =>
+  outputConsoleLog("ДЗ №4"),
+);
 
 function outputConsoleLog(message) {
-  alert(message)
-  console.log(message)
+  alert(message);
+  console.log(message);
 }
-
-
-
-
