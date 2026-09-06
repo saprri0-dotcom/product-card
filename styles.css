@@ -31,7 +31,7 @@ body {
   width: 340px;
   height: 573px;
   padding: 25px;
-  background-color: #F7F7FA;
+  background-color: #f7f7fa;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
@@ -54,7 +54,7 @@ body {
   line-height: 24px;
   font-weight: 400;
   text-transform: uppercase;
-  color: #A5A3B9;
+  color: #a5a3b9;
 }
 
 .card__title {
@@ -197,7 +197,7 @@ body {
     margin-right: auto;
   }
 
-.catalog__title {
+  .catalog__title {
     width: 100%;
     padding: 0 10px;
     box-sizing: border-box;
@@ -215,6 +215,6 @@ body {
   }
 }
 
-  body {
-    overflow-x: hidden;
-  }
+body {
+  overflow-x: hidden;
+}
