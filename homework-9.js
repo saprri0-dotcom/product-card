@@ -6,7 +6,9 @@ const numbersFromFive = numbers.filter((number) => number >= 5);
 
 const books = ["Мастер и Маргарита", "1984", "Дюна", "Гарри Поттер"];
 
-const hasDune = books.includes("Дюна");
+function hasBook(bookArray, bookTitle) {
+  return bookArray.includes(bookTitle);
+}
 
 function reverseArray(array) {
   return [...array].reverse();
@@ -42,7 +44,7 @@ const emailsWithToString = emailsWithMap.toString();
 const emailsWithJoin = emailsWithMap.join(", ");
 
 console.log(numbersFromFive);
-console.log(hasDune);
+console.log(hasBook(books, "Дюна"));
 console.log(reversedNumbers);
 console.log(reversedBooks);
 console.log(commentsWithComEmail);
