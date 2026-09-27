@@ -1,3 +1,4 @@
+document.addEventListener("DOMContentLoaded", () => {
 const cards = document.querySelectorAll(".card");
 const changeColorButton = document.querySelector(
   "#change-color-all-cards-button",
@@ -75,4 +76,4 @@ outputConsoleLogButton.addEventListener("click", () =>
 function outputConsoleLog(message) {
   alert(message);
   console.log(message);
-}
+}});
