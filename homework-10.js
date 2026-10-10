@@ -1,4 +1,4 @@
-import { products } from "./products.js";
+import { products, imagePath } from "./products.js";
 
 const productList = document.querySelector("#product-list");
 const productTemplate = document.querySelector("#product-template");
@@ -30,7 +30,7 @@ function renderProducts(productItems) {
     const productClone = productTemplate.content.cloneNode(true);
     const image = productClone.querySelector(".card__image-item");
 
-    image.src = product.image;
+    image.src = imagePath + product.image;
     image.alt = product.name;
     productClone.querySelector(".card__skin").textContent = product.skinType;
     productClone.querySelector(".card__title").textContent = product.name;
