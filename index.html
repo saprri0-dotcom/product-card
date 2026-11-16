@@ -10,10 +10,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Product Cards</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="catalog">
+    <div class="catalog" id="catalog">
       <h1 class="catalog__title">Выбери свой продукт</h1>
       <div class="catalog__buttons">
         <button id="change-color-card-button">Изменить цвет карты</button>
@@ -22,31 +26,148 @@
         </button>
         <button id="open-google">Открыть страницу Google.com</button>
         <button id="output-console-log">Вывести сообщение в консоль лог</button>
+        <button id="open-registration" type="button">Регистрация</button>
       </div>
       <div class="catalog__list" id="product-list"></div>
     </div>
     <template id="product-template">
-  <div class="card">
-    <div class="card__image">
-      <img class="card__image-item" src="" alt="" />
+      <div class="card">
+        <div class="card__image">
+          <img class="card__image-item" src="" alt="" />
+        </div>
+        <span class="card__skin"></span>
+        <h2 class="card__title"></h2>
+        <p class="card__description"></p>
+        <div class="card__compound">
+          <span class="card__label">Состав:</span>
+          <ul class="card__ingredients"></ul>
+        </div>
+        <div class="card__price">
+          <span class="card__price-label">Цена</span>
+          <span class="card__price-value"></span>
+        </div>
+      </div>
+    </template>
+    <div class="modal" id="registration-modal" aria-hidden="true">
+      <div class="overlay" data-close-modal></div>
+      <section class="modal__content" role="dialog" aria-modal="true">
+        <button
+          class="modal__close"
+          id="close-registration"
+          type="button"
+          aria-label="Закрыть окно регистрации"
+        >
+          x
+        </button>
+        <h2>Регистрация</h2>
+        <form class="registration-form" id="registration-form" novalidate>
+          <label for="firstName">Имя</label>
+          <input
+            id="firstName"
+            name="firstName"
+            type="text"
+            placeholder="Введите имя"
+            required
+            minlength="2"
+          />
+          <label for="lastName">Фамилия</label>
+          <input
+            id="lastName"
+            name="lastName"
+            type="text"
+            placeholder="Введите фамилию"
+            required
+            minlength="2"
+          />
+          <label for="birthDate">Дата рождения</label>
+          <input id="birthDate" name="birthDate" type="date" required />
+          <label for="login">Логин</label>
+          <input
+            id="login"
+            name="login"
+            type="text"
+            placeholder="Придумайте логин"
+            required
+            minlength="3"
+          />
+          <label for="password">Пароль</label>
+          <input
+            id="password"
+            name="password"
+            type="password"
+            placeholder="Не менее 6 символов"
+            required
+            minlength="6"
+          />
+          <label for="confirmPassword">Повторите пароль</label>
+          <input
+            id="confirmPassword"
+            name="confirmPassword"
+            type="password"
+            placeholder="Повторите пароль"
+            required
+            minlength="6"
+          />
+          <button type="submit">Зарегистрироваться</button>
+        </form>
+      </section>
     </div>
-    <span class="card__skin"></span>
-    <h2 class="card__title"></h2>
-    <p class="card__description"></p>
-    <div class="card__compound">
-      <span class="card__label">Состав:</span>
-      <ul class="card__ingredients"></ul>
-    </div>
-    <div class="card__price">
-      <span class="card__price-label">Цена</span>
-      <span class="card__price-value"></span>
-    </div>
-  </div>
-</template>
+    <footer class="footer" id="contacts">
+      <div class="footer__top">
+        <section class="footer__about">
+          <h2 class="footer__logo">Product Cards</h2>
+          <p class="footer__slogan">У Нас Самые Лучшие Продукты Для Кожи!</p>
+          <div class="footer__socials">
+            <a
+              href="https://t.me/ТВОЙ_ЛОГИН"
+              target="_blank"
+              aria-label="Telegram"
+            >
+              <i class="fa-solid fa-paper-plane"></i>
+            </a>
+            <a
+              href="https://vk.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="VK"
+            >
+              <i class="fa-brands fa-vk"></i>
+            </a>
+          </div>
+        </section>
+        <section class="footer__subscribe">
+          <h3 class="footer__title">Подпишись на наши акции:</h3>
+          <form class="subscribe-form" id="subscribeForm">
+            <label for="subscribeEmail" class="visually-hidden">Email</label>
+            <input
+              type="email"
+              id="subscribeEmail"
+              name="email"
+              placeholder="Введи Email..."
+              required
+            />
+            <button type="submit">Подписаться</button>
+          </form>
+        </section>
+        <nav class="footer__nav">
+          <h3 class="footer__title">Быстрые ссылки</h3>
+          <ul>
+            <li><a href="#catalog">Главная</a></li>
+            <li><a href="#product-list">Магазин</a></li>
+            <li><a href="#contacts">Контакты</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer__bottom">
+        <hr />
+        <p>www.product-cards.com©all right reserve</p>
+      </div>
+    </footer>
     <script src="main.js" defer></script>
     <script src="homework-7.js"></script>
     <script src="homework-8.js"></script>
     <script type="module" src="homework-9.js"></script>
     <script type="module" src="homework-10.js"></script>
+    <script type="module" src="homework-11.js"></script>
   </body>
 </html>
