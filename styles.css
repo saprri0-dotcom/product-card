@@ -9,7 +9,7 @@ body {
 
 .catalog {
   width: 1280px;
-  height: 1715px;
+  height: auto;
   margin: 0 auto;
   padding-top: 220px;
   background-image: url("images/dandelion.png");
@@ -217,4 +217,226 @@ body {
 
 body {
   overflow-x: hidden;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  width: 1280px;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin: 60px auto 40px ;
+  background: #3b3b3b;
+  color: #fff;
+  padding: 80px 84px 30px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.footer__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.footer__logo {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 0 20px;
+}
+
+.footer__slogan {
+  margin: 0 0 30px;
+  font-size: 16px;
+}
+
+.footer__socials {
+  display: flex;
+  gap: 30px;
+}
+
+.footer__socials a {
+  color: #fff;
+  font-size: 22px;
+  text-decoration: none;
+}
+
+.footer__title {
+  font-weight: 400;
+  font-size: 22px;
+  margin: 0 0 16px;
+}
+
+.footer__subscribe {
+  text-align: center;
+}
+
+.subscribe-form {
+  display: flex;
+  background: #fff;
+  border-radius: 10px;
+  padding: 14px 16px;
+  width: 480px;
+  box-sizing: border-box;
+}
+
+.subscribe-form input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  font-family: inherit;
+}
+
+.subscribe-form input::placeholder {
+  font-size: 16px;
+  font-weight: 500;
+  color: #555;
+}
+
+.subscribe-form button {
+  border: none;
+  border-left: 1px solid #000;
+  background: none;
+  padding-left: 20px;
+  font-size: 18px;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.footer__nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer__nav li {
+  margin-bottom: 16px;
+  font-size: 16px;
+}
+
+.footer__nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer__bottom {
+  text-align: center;
+  margin-top: 100px;
+  font-size: 16px;
+}
+
+.footer__bottom hr {
+  width: 66px;
+  margin: 0 auto 30px;
+}
+
+.footer__bottom p {
+  margin: 0;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+}
+
+.modal.modal-showed {
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 1;
+}
+
+.modal__content {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  width: min(440px, calc(100% - 32px));
+  max-height: calc(100vh - 32px);
+  overflow-y: auto;
+  box-sizing: border-box;
+  padding: 36px;
+  border-radius: 16px;
+  background: #ffffff;
+  color: #515076;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.32);
+}
+
+.modal__content h2 {
+  margin: 0 0 24px;
+  font-size: 28px;
+  text-align: center;
+}
+
+.modal__close {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  border: 0;
+  background: transparent;
+  color: #515076;
+  font-size: 32px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.registration-form {
+  display: grid;
+  gap: 8px;
+}
+
+.registration-form label {
+  margin-top: 8px;
+  font-weight: 700;
+}
+
+.registration-form input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #a5a3b9;
+  border-radius: 7px;
+  font: inherit;
+}
+
+.registration-form button {
+  margin-top: 18px;
+  padding: 13px;
+  border: 0;
+  border-radius: 7px;
+  background: #2f6b4f;
+  color: #ffffff;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.footer__socials a,
+.footer__nav a {
+  display: inline-block;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.footer__socials a:hover {
+  color: #b9e2c9;
+  transform: translateY(-5px) scale(1.15);
+}
+
+.footer__nav a:hover {
+  color: #b9e2c9;
+  transform: translateX(7px);
 }
